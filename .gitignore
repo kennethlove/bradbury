@@ -1,5 +1,5 @@
 *.pyc
-*/settings/local.*
-*/settings/secret.*
-*/static/
-*/media/
+local.py
+secret.py
+static/
+media/
