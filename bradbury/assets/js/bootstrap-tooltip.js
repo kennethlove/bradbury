@@ -272,4 +272,4 @@
   , delay: 0
   }
 
-}(window.jQuery);
+}(window.jQuery || window.Zepto);

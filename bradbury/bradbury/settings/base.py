@@ -107,6 +107,8 @@ LOCAL_APPS = (
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
+EMAIL_BACKEND = "djcelery_email.backends.CeleryEmailBackend"
+
 LOGGING = {
     "version": 1,
     "disable_existing_loggers": False,

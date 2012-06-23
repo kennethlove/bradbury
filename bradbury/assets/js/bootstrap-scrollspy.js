@@ -148,4 +148,4 @@
     })
   })
 
-}(window.jQuery);
+}(window.jQuery || window.Zepto);

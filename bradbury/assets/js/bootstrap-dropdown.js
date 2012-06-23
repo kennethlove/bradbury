@@ -97,4 +97,4 @@
       .on('click.dropdown.data-api', toggle, Dropdown.prototype.toggle)
   })
 
-}(window.jQuery);
+}(window.jQuery || window.Zepto);
