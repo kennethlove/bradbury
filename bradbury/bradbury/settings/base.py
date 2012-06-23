@@ -43,16 +43,16 @@ USE_L10N = True
 
 USE_TZ = True
 
-MEDIA_ROOT = root("..", "media")
+MEDIA_ROOT = root("..", "..", "media")
 
 MEDIA_URL = "http://media.ourreadinglist.com/"
 
-STATIC_ROOT = root("..", "static")
+STATIC_ROOT = root("..", "..", "static")
 
 STATIC_URL = "http://static.ourreadinglist.com/"
 
 STATICFILES_DIRS = (
-    root("assets"),
+    root("..", "assets"),
 )
 
 STATICFILES_FINDERS = (
@@ -79,7 +79,7 @@ ROOT_URLCONF = "bradbury.urls"
 WSGI_APPLICATION = "bradbury.wsgi.application"
 
 TEMPLATE_DIRS = (
-    root("templates"),
+    root("..", "templates"),
 )
 
 DJANGO_APPS = (
