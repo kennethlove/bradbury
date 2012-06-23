@@ -1,6 +1,9 @@
 # Django settings for bradbury project.
 import os
 
+import djcelery
+djcelery.setup_loader()
+
 here = lambda * x: os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
 
 PROJECT_ROOT = here("..")
@@ -25,6 +28,8 @@ DATABASES = {
         "PORT": '',
     }
 }
+
+BROKER_URL = "redis://localhost:6379/9"
 
 TIME_ZONE = "America/Los_Angeles"
 
@@ -86,8 +91,18 @@ DJANGO_APPS = (
     "django.contrib.staticfiles",
     "django.contrib.admin",
 )
-THIRD_PARTY_APPS = ()
+THIRD_PARTY_APPS = (
+    "south",
+    "djcelery",
+    "djcelery_email",
+    "registration",
+    "braces",
+    "crispy_forms",
+    "floppyforms",
+    "bootstrap-pagination",
+)
 LOCAL_APPS = ()
+
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 LOGGING = {
