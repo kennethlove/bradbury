@@ -101,7 +101,9 @@ THIRD_PARTY_APPS = (
     "floppyforms",
     "bootstrap-pagination",
 )
-LOCAL_APPS = ()
+LOCAL_APPS = (
+    "generic",
+)
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
