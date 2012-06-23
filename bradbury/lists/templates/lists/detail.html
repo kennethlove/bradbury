@@ -1,0 +1,14 @@
+{% extends "_layouts/base.html" %}
+
+{% block page_title %}{{ object.name }}{% endblock %}
+
+{% block page_content %}
+<div class="row-fluid">
+    <div class="span8">
+        <div class="page-header">
+            <h1>{{ object.name }}</h1>
+            <h2>{{ request.user.username }}</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}

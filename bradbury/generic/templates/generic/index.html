@@ -9,12 +9,9 @@
         <div class="hero-unit">
             <h1>Kids love to read!</h1>
             <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p>To get started, enter an <strong>author</strong>, <strong>book title</strong>, or <strong>series name</strong> below. We'll start building a list for you.</p>
-            <form action="" class="form-search span4 offset1" method="POST">
-                <div class="input-append">
-                    <input class="search-query" size="16" type="search" placeholder="Ray Bradbury"><button class="btn btn-primary" type="button">Search</button>
-                </div>
-            </form>
+            {% if not user.is_authenticated %}
+                <p><a href="{% url generic:login %}" class="btn btn-large btn-primary">Log in</a> or <a href="{% url userena_signup %}" class="btn btn-large">Sign up</a></p>
+            {% endif %}
         </div>
         <div class="row-fluid">
             <div class="span4">

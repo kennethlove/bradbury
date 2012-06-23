@@ -4,9 +4,11 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^admin/', include(admin.site.urls)),
+    (r"^admin/", include(admin.site.urls)),
+    (r"^accounts/", include("userena.urls")),
 
-    url(r"", include("generic.urls", namespace="generic")),
+    (r"^lists/", include("lists.urls", namespace="lists")),
+    (r"", include("generic.urls", namespace="generic")),
 )
 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns

@@ -95,19 +95,34 @@ THIRD_PARTY_APPS = (
     "south",
     "djcelery",
     "djcelery_email",
-    "registration",
     "braces",
     "crispy_forms",
     "floppyforms",
     "bootstrap-pagination",
+    "userena",
+    "guardian",
+    "easy_thumbnails",
 )
 LOCAL_APPS = (
     "generic",
+    "lists",
 )
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 EMAIL_BACKEND = "djcelery_email.backends.CeleryEmailBackend"
+
+AUTHENTICATION_BACKENDS = [
+    "userena.backends.UserenaAuthenticationBackend",
+    "guardian.backends.ObjectPermissionBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
+
+AUTH_PROFILE_MODULE = "generic.Profile"
+ANONYMOUS_USER_ID = -1
+LOGIN_REDIRECT_URL = "/accounts/%(username)s/"
+LOGIN_URL = "/accounts/login/"
+LOGOUT_URL = "/accounts/logout/"
 
 LOGGING = {
     "version": 1,

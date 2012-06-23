@@ -33,17 +33,17 @@
                     <a class="brand" href="#">Our Reading List</a>
                     <div class="btn-group pull-right">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="icon-user"></i> {% firstof request.user.get_full_name request.user.username "You" %}
+                            <i class="icon-user"></i> {% firstof user.get_full_name user.username "You" %}
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                        {% if request.user.is_authenticated %}
+                        {% if user.is_authenticated %}
                             <li><a href="#">Profile</a></li>
                             <li><a href="#">My Lists</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">Sign Out</a></li>
+                            <li><a href="{% url generic:logout %}">Sign Out</a></li>
                         {% else %}
-                            <li><a href="#">Log In</a></li>
+                            <li><a href="{% url generic:login %}">Log In</a></li>
                             <li class="divider"></li>
                             <li><a href="#">Sign Up</a></li>
                         {% endif %}

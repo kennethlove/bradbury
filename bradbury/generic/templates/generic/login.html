@@ -1,0 +1,12 @@
+{% extends "_layouts/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block page_title %}Log in{% endblock %}
+
+{% block page_content %}
+<div class="row-fluid">
+    <div class="span8 offset3">
+        {% crispy form form.helper %}
+    </div>
+</div>
+{% endblock %}
